@@ -32,6 +32,8 @@ def prune(html):
     for u in unpub:
         # cards linking to an unpublished guide
         html = re.sub(r'<a class="gcard[^>]*href="[^"]*/locality/%s/"[^>]*>.*?</a>\s*' % re.escape(u), "", html, flags=re.S)
+        # home-page guide cards
+        html = re.sub(r'<a class="g" href="[^"]*/locality/%s/">.*?</a>\s*' % re.escape(u), "", html, flags=re.S)
         # previous / next links
         html = re.sub(r'<a class="(?:prev|next)" href="[^"]*/locality/%s/">.*?</a>' % re.escape(u), "<span></span>", html, flags=re.S)
         # inline links to sibling guides
@@ -47,6 +49,9 @@ for d in glob.glob(os.path.join(dest, "blog/locality/*/")):
     if os.path.basename(d.rstrip("/")) not in live_dirs: shutil.rmtree(d)
 for s in published:
     wr(f"blog/locality/{s}/index.html", prune(rd(f"blog/locality/{s}/index.html")))
+
+for d in glob.glob(os.path.join(dest, "blog/locality")):
+    if os.path.isdir(d) and not os.listdir(d): os.rmdir(d)
 
 # 2) locality category page
 cat = os.path.join(dest, "blog/locality/index.html")
@@ -86,4 +91,6 @@ def keep(m):
     return m.group(0) if any(f"/{s}/" in u for s in published) else ""
 sm = re.sub(r'<url><loc>([^<]*)</loc>.*?</url>\n?', keep, sm, flags=re.S)
 wr("sitemap.xml", sm)
+d = os.path.join(dest, "blog/locality")
+if os.path.isdir(d) and not os.listdir(d): os.rmdir(d)
 print("published:", published, "| held back:", unpub)
