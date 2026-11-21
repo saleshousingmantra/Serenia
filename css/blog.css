@@ -187,3 +187,18 @@
  .gcards.two .gcard h3{font-size:16px}
  #toTop{width:40px;height:40px;right:12px}
 }
+
+/* ===== Centered card content ===== */
+.gcard .tx,.feature .tx,.soon,.pn a,.pn .next,.sidecta,.helpful,.band{text-align:center}
+.gcard .ft{justify-content:center;gap:16px;flex-wrap:wrap}
+.feature .metarow{justify-content:center}
+.helpful{justify-content:center}
+.sidecta .mini{justify-content:center;text-align:left}
+.band .acts{justify-content:center}
+.band{grid-template-columns:1fr}
+.takeaways h2{text-align:center}
+.toc summary{text-align:center}
+@media(max-width:700px){
+ .gcards .gcard .tx{justify-content:center}
+ .gcards .gcard .ft{gap:10px}
+}

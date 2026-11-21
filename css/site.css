@@ -284,3 +284,16 @@ footer .disc{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-siz
  .dd-list li{padding:9px 10px;grid-template-columns:auto 1fr 18px;gap:0 8px}.dd-list li .m{font-size:14px}.dd-list li .s{grid-column:2;grid-row:1;font-size:12px}.dd-list li .tk{grid-column:3;grid-row:1}
  #modalClose{top:4px;right:8px}
 }
+
+/* ===== Centered card content and menu ===== */
+.tile,.step,.g,.chip,.rm,.card h3,.card small,.success-message{text-align:center}
+.tile .ic{margin-left:auto;margin-right:auto}
+.plan{text-align:center}
+.plan span{text-align:center}
+.rm{justify-content:center;text-align:center;flex-wrap:wrap}
+.chips{justify-content:flex-start}
+.mbar a,.mbar button{text-align:center}
+@media(max-width:960px){
+ .nav ul{text-align:center;align-items:stretch}
+ .nav ul li a{text-align:center}
+}
