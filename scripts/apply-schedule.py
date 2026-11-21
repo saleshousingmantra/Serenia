@@ -32,6 +32,8 @@ def prune(html):
     for u in unpub:
         # cards linking to an unpublished guide
         html = re.sub(r'<a class="gcard[^>]*href="[^"]*/locality/%s/"[^>]*>.*?</a>\s*' % re.escape(u), "", html, flags=re.S)
+        # list items in the HTML site map
+        html = re.sub(r'<li>\s*<a href="[^"]*/locality/%s/">.*?</a>\s*</li>\s*' % re.escape(u), "", html, flags=re.S)
         # home-page guide cards
         html = re.sub(r'<a class="g" href="[^"]*/locality/%s/">.*?</a>\s*' % re.escape(u), "", html, flags=re.S)
         # previous / next links
@@ -81,6 +83,17 @@ if "kiwale-locality-overview" not in published:
     t = re.sub(r'<li>\s*Read our Kiwale locality guide\s*</li>\s*', "", t)
     t = re.sub(r'<li>\s*<a href="blog/locality/kiwale-locality-overview/">.*?</a>\s*</li>\s*', "", t, flags=re.S)
 wr("index.html", t)
+
+# 4b) other pages that carry the footer or the full guide list, and shared styles
+for pth in sorted(glob.glob(os.path.join(src, "blog/buying-guides/**/index.html"), recursive=True)) + [os.path.join(src, "sitemap/index.html")]:
+    rel = os.path.relpath(pth, src)
+    t = prune(rd(rel))
+    if not published:
+        t = re.sub(r'<li>\s*<a href="[^"]*/blog/locality/">.*?</a>\s*</li>\s*', "", t, flags=re.S)
+        t = re.sub(r'<section class="rv">\s*<h2>Locality guides</h2>\s*<ul>\s*</ul>\s*</section>\s*', "", t, flags=re.S)
+    wr(rel, t)
+for css in ("css/site.css", "css/blog.css"):
+    shutil.copyfile(os.path.join(src, css), os.path.join(dest, css))
 
 # 5) sitemap
 sm = rd("sitemap.xml")
