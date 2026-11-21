@@ -426,3 +426,9 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
 .ribbon svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .sx-lock p{background:rgba(5,26,29,.62);padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
 .sx-lock{background:linear-gradient(180deg,rgba(5,26,29,.35),rgba(5,26,29,.7))}
+
+/* ===== Developed-by line ===== */
+.devby{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:-4px 0 18px;padding:8px 16px;border:1px solid rgba(242,176,140,.4);border-radius:12px;background:rgba(242,176,140,.1);color:#fff;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.01em}
+.devby span{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cu-l)}
+.devby em{font-family:var(--sans);font-style:normal;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c0c04;background:linear-gradient(135deg,#F2B08C,#C9714A);border-radius:999px;padding:3px 10px}
+@media(max-width:700px){.devby{font-size:16px;padding:6px 12px;margin:-2px 0 12px;gap:2px 8px}.devby span{font-size:10px}.devby em{font-size:10.5px;padding:2px 8px}}
