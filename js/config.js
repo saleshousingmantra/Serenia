@@ -34,7 +34,6 @@ window.SITE_CONFIG = {
 
   /* Contact numbers (digits only, with country code) */
   PHONE_WHATSAPP: "917415322403",
-  PHONE_DISPLAY: "+91 74153 22403",
 
   /* Site */
   SITE_URL: "https://sereniakiwale.com",
