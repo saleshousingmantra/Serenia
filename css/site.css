@@ -517,3 +517,5 @@ footer .cols>div,footer p,footer h4{min-width:0;overflow-wrap:anywhere}
 @media(max-width:700px){.card .ct{font-size:19px;margin:0}}
 .catintro{max-width:760px;margin:0 0 26px;color:var(--mut);font-size:17px;font-weight:300;line-height:1.75}
 @media(max-width:700px){.catintro{font-size:15px;margin-bottom:16px}}
+.btn-outline-dark{border-color:var(--ink);color:var(--ink);margin-left:10px;background:transparent}
+@media(max-width:700px){.btn-outline-dark{margin-left:0;margin-top:10px}}

@@ -235,3 +235,6 @@
  .band h2{font-size:25px}
 }
 .bhero h1,.post-body h2,.gcard h3,.feature h2,.pn b,.sidecta h3,.band h2{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.post-body td a{color:var(--cu-d);font-weight:600;text-decoration:underline;text-decoration-color:rgba(163,83,47,.35);text-underline-offset:3px;font-size:14.5px}
+.post-body td a:hover{text-decoration-color:var(--cu-d)}
+.post-body table.compare td:nth-child(3){min-width:200px}
