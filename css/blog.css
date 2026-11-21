@@ -152,3 +152,38 @@
  .post-body p,.post-body li{font-size:16.5px}
 }
 .pn span:empty{display:none}
+
+/* ===== Phone: compact blog ===== */
+@media(max-width:700px){
+ .bhero .wrap{padding-top:22px;padding-bottom:22px}
+ .bhero h1{font-size:25px;margin:8px 0 8px}
+ .bhero p.dek{font-size:14.5px;margin-bottom:12px}
+ .bhero .crumbs{font-size:12px}
+ .tag-pill{font-size:10.5px;padding:3px 10px}
+ .metarow{font-size:12.5px;gap:8px 14px}
+ .metarow>span:nth-child(3){display:none}
+ .share{margin-top:6px;gap:6px}.share a,.share button{padding:6px 12px;font-size:12px}
+ .search{margin-top:14px}.search input{padding:12px 16px 12px 44px;font-size:15px}
+ .post-layout{padding:18px 16px 50px;gap:16px}
+ .takeaways{padding:14px 16px}.takeaways h2{font-size:18px}.takeaways li{font-size:14.5px;line-height:1.5;margin-bottom:4px;padding-left:22px}
+ .post-body p,.post-body li{font-size:15.5px;line-height:1.65;margin-bottom:10px}
+ .post-body h2{font-size:22px;margin:24px 0 8px;padding-left:14px}
+ .post-body .relh{font-size:21px;margin:26px 0 10px}
+ .post-body .tw{margin:10px 0 14px}.post-body table.compare{min-width:0}
+ .toc{padding:12px 14px}.toc summary{font-size:17px}.toc a{font-size:13.5px;padding:6px 8px 6px 32px}
+ .sidecta{padding:16px}.sidecta h3{font-size:19px}.sidecta p{font-size:13.5px;margin-bottom:10px}
+ .helpful{padding:12px 14px;margin:20px 0 4px;gap:8px}.helpful b{font-size:17px}.helpful button{padding:6px 14px;font-size:13px}
+ .pn{margin-top:22px;gap:10px}.pn a{padding:12px 14px}.pn small{font-size:10.5px}.pn b{font-size:15px}
+ .chips2{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 12px;padding:2px 16px 6px;scrollbar-width:none;gap:8px}
+ .chips2::-webkit-scrollbar{display:none}
+ .chips2 button{flex:0 0 auto;padding:7px 14px;font-size:13px}
+ .feature .im{min-height:150px}.feature .tx{padding:16px}.feature h2{font-size:21px}.feature p{font-size:13.5px;margin-bottom:10px}
+ .feature{margin-bottom:14px;border-radius:16px}
+ .band{padding:20px;margin-top:26px;border-radius:16px;gap:12px}.band h2{font-size:21px}.band p{font-size:13.5px}
+ /* related guides: vertical carousel cards */
+ .gcards.two .gcard{flex-direction:column}
+ .gcards.two .gcard .im{flex:none;aspect-ratio:16/9;min-height:0}
+ .gcards.two .gcard .tx{padding:12px 14px}
+ .gcards.two .gcard h3{font-size:16px}
+ #toTop{width:40px;height:40px;right:12px}
+}
