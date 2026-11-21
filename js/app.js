@@ -87,8 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var modalForm = document.getElementById('modalForm'), pendingWa = null;
   function openModal(plan, intent) {
     overlay.dataset.intent = intent || 'enquire';
-    if (plan) interest.value = plan;
+    if (plan) { interest.value = plan; interest.dispatchEvent(new Event('change', { bubbles: true })); }
+    var sb = modalForm.querySelector('button[type="submit"]'); if (sb) sb.textContent = intent === 'whatsapp' ? 'Continue to WhatsApp' : 'Request Callback';
     document.getElementById('modalTitle').textContent = intent === 'whatsapp' ? 'Chat with us on WhatsApp' : 'Get Price & Brochure';
+    var ms = document.getElementById('modalSub'); if (ms) ms.textContent = intent === 'whatsapp' ? 'Share your details and we will open WhatsApp for you.' : 'Our relationship manager will call you back.';
     overlay.classList.add('open'); document.body.style.overflow = 'hidden';
     setTimeout(function () { document.getElementById('modal-name').focus(); }, 100);
   }

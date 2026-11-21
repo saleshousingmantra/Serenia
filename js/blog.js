@@ -104,3 +104,38 @@ document.addEventListener('DOMContentLoaded', function () {
     rv.forEach(function (el) { ro.observe(el); });
   } else { rv.forEach(function (el) { el.classList.add('in'); }); }
 });
+
+/* Enquiry popup on blog pages (same behaviour as the landing page) */
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.getElementById('modalOverlay'), form = document.getElementById('modalForm');
+  if (!overlay || !form) return;
+  var cfg = window.SITE_CONFIG || {}, PHONE = cfg.PHONE_WHATSAPP || '917415322403', pendingWa = null;
+  [['project', cfg.PROJECT_NAME], ['developer', cfg.DEFAULT_DEVELOPER_NAME], ['manager_name', cfg.DEFAULT_MANAGER_NAME], ['manager_email', cfg.DEFAULT_MANAGER_EMAIL]]
+    .forEach(function (p) { if (p[1]) document.querySelectorAll('[name="' + p[0] + '"]').forEach(function (el) { el.defaultValue = el.value = p[1]; }); });
+  var interest = document.getElementById('modal-interest');
+  function openModal(plan, intent) {
+    overlay.dataset.intent = intent || 'enquire';
+    if (plan && interest) { interest.value = plan; interest.dispatchEvent(new Event('change', { bubbles: true })); }
+    document.getElementById('modalTitle').textContent = intent === 'whatsapp' ? 'Chat with us on WhatsApp' : 'Get Price & Brochure';
+    var ms = document.getElementById('modalSub'); if (ms) ms.textContent = intent === 'whatsapp' ? 'Share your details and we will open WhatsApp for you.' : 'Our relationship manager will call you back.';
+    var sb = form.querySelector('button[type="submit"]'); if (sb) sb.textContent = intent === 'whatsapp' ? 'Continue to WhatsApp' : 'Request Callback';
+    overlay.classList.add('open'); document.body.style.overflow = 'hidden';
+    setTimeout(function () { var n = document.getElementById('modal-name'); if (n) n.focus(); }, 100);
+  }
+  function closeModal() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-open-modal]'), function (el) {
+    el.addEventListener('click', function () { openModal(el.getAttribute('data-plan'), el.getAttribute('data-intent')); });
+  });
+  form.addEventListener('submit', function () { if (overlay.dataset.intent === 'whatsapp') pendingWa = window.open('', '_blank'); });
+  form.addEventListener('enquirySubmitted', function (e) {
+    var d = e.detail || {};
+    if (overlay.dataset.intent === 'whatsapp') {
+      var url = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent("Hi, I'm " + (d.name || '') + ". I'm interested in " + (d.interest || 'a home') + ' at ' + (d.project || 'Serenia by House of Jets') + '. My number is ' + (d.phone || '') + '. Please share details.');
+      if (pendingWa && !pendingWa.closed) pendingWa.location.href = url; else window.open(url, '_blank');
+      pendingWa = null;
+    }
+  });
+});

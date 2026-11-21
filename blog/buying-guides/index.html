@@ -169,6 +169,51 @@
 <a class="btn btn-line" href="tel:+917415322403">Call Now</a></div>
 </div>
 </main>
+<div id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="card modal">
+<button type="button" id="modalClose" aria-label="Close">&times;</button>
+<h3 id="modalTitle">Get Price &amp; Brochure</h3>
+<small id="modalSub">Our relationship manager will call you back.</small>
+<form id="modalForm" data-thanks="../../thank-you/" novalidate>
+<div class="fld-row">
+<div class="fld">
+<label for="modal-project">Project</label><input id="modal-project" name="project" value="Serenia by House of Jets" readonly tabindex="-1" aria-readonly="true">
+</div>
+<div class="fld">
+<label for="modal-rm">Relationship manager</label><input id="modal-rm" name="manager_name" value="Rishabh" readonly tabindex="-1" aria-readonly="true">
+</div>
+</div>
+<div class="fld">
+<label for="modal-name">Full name</label><input id="modal-name" name="name" autocomplete="name" placeholder="Your name">
+<div class="field-error" id="modal-name-error">
+</div>
+</div>
+<div class="fld">
+<label for="modal-phone">Mobile number</label><input id="modal-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number">
+<div class="field-error" id="modal-phone-error">
+</div>
+</div>
+<div class="fld">
+<label for="modal-email">Email</label><input id="modal-email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+<div class="field-error" id="modal-email-error">
+</div>
+</div>
+<div class="fld">
+<label for="modal-interest">I'm interested in</label><select id="modal-interest" name="interest"><option value="">Select BHK type</option><option value="2 BHK" data-sub="Carpet 674–678 sq ft">2 BHK</option><option value="3 BHK" data-sub="Carpet 956–962 sq ft">3 BHK</option><option value="2+2 Simplex (4 BHK)" data-sub="Carpet 1,496 sq ft">2+2 Simplex (4 BHK)</option><option value="3+3 Simplex (6 BHK)" data-sub="Carpet 2,078 sq ft">3+3 Simplex (6 BHK)</option></select>
+<div class="field-error" id="modal-interest-error">
+</div>
+</div>
+<input type="hidden" name="developer">
+<input type="hidden" name="manager_email">
+<input type="hidden" name="source">
+<input type="hidden" name="source_link">
+<button class="btn btn-cu" type="submit">Request Callback</button>
+<p class="note">By submitting you agree to be contacted about Serenia. We never share your details.</p>
+</form>
+<div class="success-message" role="status">
+<b>Thank you!</b>Rishabh will contact you shortly.</div>
+</div>
+</div>
 <button id="toTop" type="button" aria-label="Back to top">
 <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div id="toast" role="status">
@@ -192,5 +237,9 @@
 <p class="disc">Disclaimer: Information is indicative and for general guidance only. Prices, areas and specifications are subject to change. Please verify RERA details before booking.</p>
 </div>
 </footer>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script defer src="../../js/config.js"></script>
+<script defer src="../../js/form.js"></script>
+<script defer src="../../js/dropdown.js"></script>
 <script defer src="../../js/blog.js"></script>
 </body></html>

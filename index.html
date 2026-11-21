@@ -372,6 +372,14 @@
 <h3>Get Price &amp; Brochure</h3>
 <small>Our relationship manager will call you back.</small>
 <form novalidate>
+<div class="fld-row">
+<div class="fld">
+<label for="hero-project">Project</label><input id="hero-project" name="project" value="Serenia by House of Jets" readonly tabindex="-1" aria-readonly="true">
+</div>
+<div class="fld">
+<label for="hero-rm">Relationship manager</label><input id="hero-rm" name="manager_name" value="Rishabh" readonly tabindex="-1" aria-readonly="true">
+</div>
+</div>
 <div class="fld">
 <label for="hero-name">Full name</label><input id="hero-name" name="name" autocomplete="name" placeholder="Your name">
 <div class="field-error" id="hero-name-error">
@@ -388,13 +396,11 @@
 </div>
 </div>
 <div class="fld">
-<label for="hero-interest">I'm interested in</label><select id="hero-interest" name="interest"><option value="">Select</option><option>2 BHK</option><option>3 BHK</option><option>2+2 Simplex (4 BHK)</option><option>3+3 Simplex (6 BHK)</option></select>
+<label for="hero-interest">I'm interested in</label><select id="hero-interest" name="interest"><option value="">Select BHK type</option><option value="2 BHK" data-sub="Carpet 674–678 sq ft">2 BHK</option><option value="3 BHK" data-sub="Carpet 956–962 sq ft">3 BHK</option><option value="2+2 Simplex (4 BHK)" data-sub="Carpet 1,496 sq ft">2+2 Simplex (4 BHK)</option><option value="3+3 Simplex (6 BHK)" data-sub="Carpet 2,078 sq ft">3+3 Simplex (6 BHK)</option></select>
 <div class="field-error" id="hero-interest-error">
 </div>
 </div>
-<input type="hidden" name="project">
 <input type="hidden" name="developer">
-<input type="hidden" name="manager_name">
 <input type="hidden" name="manager_email">
 <input type="hidden" name="source">
 <input type="hidden" name="source_link">
@@ -749,12 +755,21 @@
 <b>Rishabh</b><br><span>Relationship Manager</span></div>
 </div>
 <p style="margin-top:20px">
-<a class="btn btn-cu" href="https://wa.me/917415322403?text=Hi%2C%20I%27m%20interested%20in%20Serenia%20Kiwale.%20Please%20share%20details." rel="noopener">Chat on WhatsApp</a></p>
+<button type="button" class="btn btn-cu" data-open-modal data-intent="whatsapp">Chat on WhatsApp</button>
+</p>
 </div>
 <div class="card">
 <h3>Get Price &amp; Brochure</h3>
 <small>We typically respond within the hour.</small>
 <form novalidate>
+<div class="fld-row">
+<div class="fld">
+<label for="cta-project">Project</label><input id="cta-project" name="project" value="Serenia by House of Jets" readonly tabindex="-1" aria-readonly="true">
+</div>
+<div class="fld">
+<label for="cta-rm">Relationship manager</label><input id="cta-rm" name="manager_name" value="Rishabh" readonly tabindex="-1" aria-readonly="true">
+</div>
+</div>
 <div class="fld">
 <label for="cta-name">Full name</label><input id="cta-name" name="name" autocomplete="name" placeholder="Your name">
 <div class="field-error" id="cta-name-error">
@@ -771,13 +786,11 @@
 </div>
 </div>
 <div class="fld">
-<label for="cta-interest">I'm interested in</label><select id="cta-interest" name="interest"><option value="">Select</option><option>2 BHK</option><option>3 BHK</option><option>2+2 Simplex (4 BHK)</option><option>3+3 Simplex (6 BHK)</option></select>
+<label for="cta-interest">I'm interested in</label><select id="cta-interest" name="interest"><option value="">Select BHK type</option><option value="2 BHK" data-sub="Carpet 674–678 sq ft">2 BHK</option><option value="3 BHK" data-sub="Carpet 956–962 sq ft">3 BHK</option><option value="2+2 Simplex (4 BHK)" data-sub="Carpet 1,496 sq ft">2+2 Simplex (4 BHK)</option><option value="3+3 Simplex (6 BHK)" data-sub="Carpet 2,078 sq ft">3+3 Simplex (6 BHK)</option></select>
 <div class="field-error" id="cta-interest-error">
 </div>
 </div>
-<input type="hidden" name="project">
 <input type="hidden" name="developer">
-<input type="hidden" name="manager_name">
 <input type="hidden" name="manager_email">
 <input type="hidden" name="source">
 <input type="hidden" name="source_link">
@@ -837,15 +850,24 @@
 
 <div class="mbar">
 <a href="tel:+917415322403" style="background:var(--ink);color:#fff">Call</a>
-<a href="https://wa.me/917415322403" rel="noopener" style="background:#1fa855;color:#fff">WhatsApp</a><button type="button" data-open-modal style="background:var(--cu);color:#1c0c04">Enquire</button>
+<button type="button" data-open-modal data-intent="whatsapp" style="background:#1fa855;color:#fff">WhatsApp</button>
+<button type="button" data-open-modal style="background:var(--cu);color:#1c0c04">Enquire</button>
 </div>
 
 <div id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 <div class="card modal">
 <button type="button" id="modalClose" aria-label="Close">&times;</button>
 <h3 id="modalTitle">Get Price &amp; Brochure</h3>
-<small>Our relationship manager will call you back.</small>
+<small id="modalSub">Our relationship manager will call you back.</small>
 <form id="modalForm" novalidate>
+<div class="fld-row">
+<div class="fld">
+<label for="modal-project">Project</label><input id="modal-project" name="project" value="Serenia by House of Jets" readonly tabindex="-1" aria-readonly="true">
+</div>
+<div class="fld">
+<label for="modal-rm">Relationship manager</label><input id="modal-rm" name="manager_name" value="Rishabh" readonly tabindex="-1" aria-readonly="true">
+</div>
+</div>
 <div class="fld">
 <label for="modal-name">Full name</label><input id="modal-name" name="name" autocomplete="name" placeholder="Your name">
 <div class="field-error" id="modal-name-error">
@@ -862,13 +884,11 @@
 </div>
 </div>
 <div class="fld">
-<label for="modal-interest">I'm interested in</label><select id="modal-interest" name="interest"><option value="">Select</option><option>2 BHK</option><option>3 BHK</option><option>2+2 Simplex (4 BHK)</option><option>3+3 Simplex (6 BHK)</option></select>
+<label for="modal-interest">I'm interested in</label><select id="modal-interest" name="interest"><option value="">Select BHK type</option><option value="2 BHK" data-sub="Carpet 674–678 sq ft">2 BHK</option><option value="3 BHK" data-sub="Carpet 956–962 sq ft">3 BHK</option><option value="2+2 Simplex (4 BHK)" data-sub="Carpet 1,496 sq ft">2+2 Simplex (4 BHK)</option><option value="3+3 Simplex (6 BHK)" data-sub="Carpet 2,078 sq ft">3+3 Simplex (6 BHK)</option></select>
 <div class="field-error" id="modal-interest-error">
 </div>
 </div>
-<input type="hidden" name="project">
 <input type="hidden" name="developer">
-<input type="hidden" name="manager_name">
 <input type="hidden" name="manager_email">
 <input type="hidden" name="source">
 <input type="hidden" name="source_link">
@@ -887,6 +907,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script defer src="js/config.js"></script>
 <script defer src="js/form.js"></script>
+<script defer src="js/dropdown.js"></script>
 <script defer src="js/app.js"></script>
 </body>
 </html>
