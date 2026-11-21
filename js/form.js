@@ -159,11 +159,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* Check a field when the person leaves it, so the message
        appears right under it instead of only after pressing submit. */
+    /* Only after the person has typed or chosen something in that field
+       (data-touched). Tabbing or tapping past an empty field, or the popup
+       moving focus into the name field when it opens, must not show an error. */
     document.querySelectorAll('form input, form select').forEach(function (field) {
         if (!VALIDATORS[field.name]) return;
+        var mark = function () { field.dataset.touched = "1"; };
+        field.addEventListener("input", mark);
+        field.addEventListener("change", mark);
         field.addEventListener("blur", function () {
-            validateField(field);
+            if (field.dataset.touched === "1") validateField(field);
         });
+    });
+
+    /* Start every form clean: no leftover errors or touched flags. Runs when
+       the popup opens and after a form is reset. */
+    function resetFormUi(form) {
+        form.querySelectorAll('input, select').forEach(function (field) {
+            delete field.dataset.touched;
+            clearFieldError(field);
+        });
+        setFormError(form, "");
+    }
+    document.querySelectorAll("form").forEach(function (form) {
+        form.addEventListener("formreset-ui", function () { resetFormUi(form); });
+        form.addEventListener("reset", function () { setTimeout(function () { resetFormUi(form); }, 0); });
     });
 
     /* Form-level message (e.g. server error) shown under the button. */

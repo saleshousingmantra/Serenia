@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var modalForm = document.getElementById('modalForm'), pendingWa = null;
   function openModal(plan, intent) {
     overlay.dataset.intent = intent || 'enquire';
+    modalForm.dispatchEvent(new CustomEvent('formreset-ui'));
     if (plan) { interest.value = plan; interest.dispatchEvent(new Event('change', { bubbles: true })); }
     var sb = modalForm.querySelector('button[type="submit"]'); if (sb) sb.textContent = intent === 'whatsapp' ? 'Continue to WhatsApp' : 'Request Callback';
     document.getElementById('modalTitle').textContent = intent === 'whatsapp' ? 'Chat with us on WhatsApp' : 'Get Price & Brochure';
