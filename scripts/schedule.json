@@ -1,0 +1,13 @@
+{
+  "note": "Guides go live one per day, in this order. Update 'published' when a guide goes live.",
+  "start_date": "2026-11-22",
+  "order": [
+    "kiwale-locality-overview",
+    "schools-and-colleges-near-kiwale",
+    "hospitals-near-kiwale",
+    "shopping-and-malls-near-kiwale",
+    "it-parks-and-jobs-near-kiwale",
+    "roads-and-transport-in-kiwale"
+  ],
+  "published": []
+}
