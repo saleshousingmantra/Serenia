@@ -1,8 +1,10 @@
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url(../fonts/cormorant-garamond-variable.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Jost';font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/jost-variable.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* Serenia by House of Jets: site styles (deep teal + copper) */
-:root{--cu:#C9714A;--cu-d:#A3532F;--cu-l:#F2B08C;--ink:#0B3B3F;--ink2:#12494E;--deep:#082C30;--ivory:#F5F8F6;--sand:#E6EFEC;--mut:#566B69;--line:#D3E1DD;--r:16px;--serif:Georgia,'Times New Roman',serif}
+:root{--cu:#C9714A;--cu-d:#A3532F;--cu-l:#F2B08C;--ink:#0B3B3F;--ink2:#12494E;--deep:#082C30;--ivory:#F5F8F6;--sand:#E6EFEC;--mut:#566B69;--line:#D3E1DD;--r:16px;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Jost','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:var(--ivory);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-weight:400;letter-spacing:.01em;color:var(--ink);background:var(--ivory);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block;height:auto}
@@ -297,3 +299,38 @@ footer .disc{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-siz
  .nav ul{text-align:center;align-items:stretch}
  .nav ul li a{text-align:center}
 }
+
+/* ===== Typography: Cormorant Garamond headings, Jost body ===== */
+h1,h2{font-weight:500;letter-spacing:0}
+h3{font-weight:600;letter-spacing:0}
+.eyebrow{font-family:var(--serif);font-size:15px;font-weight:600;letter-spacing:.14em;color:var(--cu-d)}
+.lead{font-weight:300;font-size:17.5px}
+.btn,button,.dd-btn,.fld input,.fld label,summary{font-family:var(--sans)}
+.btn{font-weight:500;letter-spacing:.04em}
+.badge,.tag-pill,th{font-family:var(--sans)}
+.price b,.stats b,td.p,.chip b,.av{font-family:var(--serif);font-weight:600}
+@media(min-width:701px){
+ h2{font-size:clamp(34px,4.6vw,54px)}
+ .hero h1{font-size:clamp(40px,5.8vw,72px);font-weight:500}
+ .hero p.sub{font-size:20px;font-weight:300}
+ .tile h3,.step h3,.g h3{font-size:26px}
+ .card h3{font-size:30px}
+ .price b{font-size:36px}.stats b{font-size:36px}
+ td.p{font-size:23px}
+ .chip b{font-size:24px}
+ .step::before{font-size:46px}
+}
+@media(max-width:700px){
+ h2{font-size:29px}
+ .eyebrow{font-size:13px}
+ .hero h1{font-size:31px}
+ .lead{font-size:15.5px}
+ .tile h3,.step h3,.g h3{font-size:21px}
+ .card h3{font-size:23px}
+ .price b{font-size:28px}.stats b{font-size:24px}
+ td.p{font-size:19px}
+ .chip b{font-size:20px}
+ .step::before{font-size:34px}
+}
+h1,h2,h3,.price b,.stats b,td.p,.chip b,.step::before,.av{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+@media(min-width:701px){.hero h1{font-size:clamp(38px,5vw,62px)}}

@@ -202,3 +202,36 @@
  .gcards .gcard .tx{justify-content:center}
  .gcards .gcard .ft{gap:10px}
 }
+
+/* ===== Typography: Cormorant Garamond headings, Jost body ===== */
+.bhero h1{font-weight:500}
+.post-body p,.post-body li{font-weight:300;font-size:18.5px}
+.post-body p strong,.post-body li strong{font-weight:500}
+.post-body h2{font-weight:500}
+.gcard h3,.feature h2,.pn b,.sidecta h3,.toc summary,.takeaways h2,.helpful b,.band h2,.soon h3{font-weight:600}
+.gcard small,.tag-pill,.pn small{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:13px}
+@media(min-width:701px){
+ .bhero h1{font-size:clamp(36px,5.4vw,64px)}
+ .post-body h2{font-size:36px}
+ .gcard h3{font-size:25px}
+ .feature h2{font-size:clamp(30px,3.4vw,42px)}
+ .sidecta h3{font-size:27px}
+ .takeaways h2{font-size:26px}
+ .toc summary{font-size:22px}
+ .pn b{font-size:21px}
+ .band h2{font-size:clamp(30px,3.4vw,42px)}
+}
+@media(max-width:700px){
+ .bhero h1{font-size:29px}
+ .post-body p,.post-body li{font-size:16.5px}
+ .post-body h2{font-size:26px}
+ .post-body .relh{font-size:25px}
+ .gcard h3{font-size:19px}
+ .gcards .gcard h3{font-size:18px}
+ .feature h2{font-size:25px}
+ .sidecta h3{font-size:22px}
+ .takeaways h2{font-size:21px}
+ .pn b{font-size:17px}
+ .band h2{font-size:25px}
+}
+.bhero h1,.post-body h2,.gcard h3,.feature h2,.pn b,.sidecta h3,.band h2{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
