@@ -480,3 +480,16 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
  .jets-list .ltr{font-size:46px}.jets-list b{font-size:17px}
 }
 .jets-list .ltr{line-height:1.2;padding-bottom:.08em;margin-bottom:4px}
+
+/* Outline buttons made from <button> must not pick up the browser's grey fill */
+button.btn,.btn-line{-webkit-appearance:none;appearance:none}
+.btn-line{background:transparent;color:#fff}
+.sidecta .btn-line,.band .btn-line{background:transparent;color:#fff}
+
+/* Never let a long word or a large phone text size widen the page */
+html,body{overflow-x:clip;max-width:100%}
+footer .cols{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr)}
+footer .cols>div,footer p,footer h4{min-width:0;overflow-wrap:anywhere}
+.split>*,.cta .wrap>*,.hero .wrap>*,.post-layout>*{min-width:0}
+@media(max-width:960px){footer .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:700px){.stats{flex-wrap:wrap}}
