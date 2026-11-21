@@ -461,3 +461,22 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
  .dev-fig.main,.dev-fig.main .dev-img{height:100%}
  .dev-fig.main .dev-img img{height:100%;object-fit:cover}
 }
+
+/* ===== JETS meaning ===== */
+.jets{margin-top:44px;text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+.jets-lead{font-size:19px;font-weight:300;color:var(--ink2);line-height:1.7;margin-bottom:26px}
+.jets h3{font-size:28px;font-weight:500;margin-bottom:18px}
+.jets-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.jets-list li{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 12px 18px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.jets-list li:hover{transform:translateY(-5px);border-color:var(--cu);box-shadow:0 16px 36px rgba(8,44,48,.14)}
+.jets-list .ltr{display:block;font-family:var(--serif);font-size:72px;font-weight:500;line-height:1;background:linear-gradient(135deg,#F2B08C,#C9714A 55%,#A3532F);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.jets-list b{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.2;color:var(--ink)}
+@media(max-width:700px){
+ .jets{margin-top:24px}
+ .jets-lead{font-size:15.5px;margin-bottom:16px}
+ .jets h3{font-size:21px;margin-bottom:12px}
+ .jets-list{grid-template-columns:repeat(2,1fr);gap:10px}
+ .jets-list li{padding:14px 8px 12px;border-radius:14px}
+ .jets-list .ltr{font-size:46px}.jets-list b{font-size:17px}
+}
+.jets-list .ltr{line-height:1.2;padding-bottom:.08em;margin-bottom:4px}
