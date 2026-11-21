@@ -493,3 +493,21 @@ footer .cols>div,footer p,footer h4{min-width:0;overflow-wrap:anywhere}
 .split>*,.cta .wrap>*,.hero .wrap>*,.post-layout>*{min-width:0}
 @media(max-width:960px){footer .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:700px){.stats{flex-wrap:wrap}}
+
+/* ===== Logo: leaf mark + wordmark ===== */
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav .logo img{height:44px;width:auto}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm b{font-family:var(--serif);font-size:29px;font-weight:600;letter-spacing:.16em;color:var(--ink)}
+.wm i{font-style:normal;font-size:9.5px;font-weight:500;letter-spacing:.3em;color:var(--cu-d);margin-top:5px}
+.flogo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.flogo img{height:44px;width:auto}
+.flogo .wm b{color:#F4EBDD}.flogo .wm i{color:var(--cu-l)}
+.logo.center{justify-content:center;margin:0 auto 28px}
+.logo.center img{height:60px;width:auto}
+.logo.center .wm b{font-size:36px}
+@media(max-width:700px){
+ .nav .logo img{height:36px}.nav .logo{gap:8px}
+ .wm b{font-size:21px;letter-spacing:.14em}.wm i{font-size:7.5px;letter-spacing:.24em;margin-top:4px}
+ .logo.center img{height:48px}.logo.center .wm b{font-size:28px}
+}
