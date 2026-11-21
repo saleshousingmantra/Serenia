@@ -15,3 +15,9 @@ python3 /tmp/src/scripts/apply-schedule.py /tmp/src .
 git add -A && git commit -m "Publish guide: <title>" && git push origin main
 ```
 The script removes links, cards and sitemap entries for guides that are not live yet, so the live site never links to a missing page.
+
+## Deploy to Hostinger
+The site runs at https://sereniakiwale.com from the `main` branch of this repo (Hostinger Git deployment, HTTPS clone).
+After pushing to `main`, redeploy so the server pulls the new commit: in hPanel go to Websites, Manage, Advanced, Git and click Pull
+(or ask Claude to run the Hostinger "deploy website Git repository" operation again).
+Automatic deploy on every push needs the Hostinger Git installation to be given access to this repository in hPanel.
