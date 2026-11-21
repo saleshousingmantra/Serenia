@@ -24,3 +24,9 @@ Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "SAMEORIGIN"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
+
+# Do not serve build and repo files
+<FilesMatch "^(package\.json|README\.md|\.gitignore)$">
+Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/scripts/
