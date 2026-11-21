@@ -1,0 +1,11 @@
+{
+  "name": "serenia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serenia by House of Jets, Kiwale, Pune: static landing site and blog",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && npx --yes serve dist"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" width="560" height="200" role="img" aria-label="Serenia">
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="560" y2="200">
+      <stop offset="0" stop-color="#F2B08C"/>
+      <stop offset="0.5" stop-color="#C9714A"/>
+      <stop offset="1" stop-color="#A3532F"/>
+    </linearGradient>
+  </defs>
+  <!-- emblem: three rising towers inside an arch -->
+  <g transform="translate(40,20)" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 150 V70 A54 54 0 0 1 114 70 V150"/>
+    <path d="M30 150 V84 M60 150 V36 M90 150 V84" stroke-width="7"/>
+    <path d="M0 150 H120"/>
+    <circle cx="60" cy="20" r="3" fill="url(#gold)" stroke="none"/>
+  </g>
+  <text x="190" y="105" font-family="'Cormorant Garamond','Playfair Display',Georgia,'Times New Roman',serif" font-size="68" letter-spacing="6" fill="#F5F8F6">SERENIA</text>
+  <line x1="192" y1="124" x2="500" y2="124" stroke="url(#gold)" stroke-width="1.5"/>
+  <text x="192" y="150" font-family="Georgia,'Times New Roman',serif" font-size="14" letter-spacing="5.5" fill="#F2B08C">BY HOUSE OF JETS</text>
+</svg>
