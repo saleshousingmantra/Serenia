@@ -519,3 +519,7 @@ footer .cols>div,footer p,footer h4{min-width:0;overflow-wrap:anywhere}
 @media(max-width:700px){.catintro{font-size:15px;margin-bottom:16px}}
 .btn-outline-dark{border-color:var(--ink);color:var(--ink);margin-left:10px;background:transparent}
 @media(max-width:700px){.btn-outline-dark{margin-left:0;margin-top:10px}}
+
+.gl-quick{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px 0 0}
+.gl-quick a{font-size:13px;font-weight:600;color:var(--deep,#0B3B3F);background:#fff;border:1px solid rgba(11,59,63,.18);border-radius:99px;padding:7px 14px;text-decoration:none;transition:background .2s,border-color .2s}
+.gl-quick a:hover{background:#fff4ea;border-color:var(--cu,#C9714A)}

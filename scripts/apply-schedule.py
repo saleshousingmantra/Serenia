@@ -92,6 +92,10 @@ for pth in sorted(glob.glob(os.path.join(src, "blog/buying-guides/**/index.html"
         t = re.sub(r'<li>\s*<a href="[^"]*/blog/locality/">.*?</a>\s*</li>\s*', "", t, flags=re.S)
         t = re.sub(r'<section class="rv">\s*<h2>Locality guides</h2>\s*<ul>\s*</ul>\s*</section>\s*', "", t, flags=re.S)
     wr(rel, t)
+# 4c) project pages (always live) and the remaining static pages that carry cache-busted asset links
+for pth in sorted(glob.glob(os.path.join(src, "blog/serenia/**/index.html"), recursive=True)) + [os.path.join(src, "thank-you/index.html"), os.path.join(src, "404.html")]:
+    rel = os.path.relpath(pth, src)
+    wr(rel, prune(rd(rel)))
 for css in ("css/site.css", "css/blog.css"):
     shutil.copyfile(os.path.join(src, css), os.path.join(dest, css))
 
