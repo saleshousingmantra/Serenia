@@ -347,6 +347,49 @@ figure.plan{margin:18px 0}figure.plan img{width:100%;height:auto;border-radius:1
     wr("sitemap.xml", sm)
 
 
+def enrich_schema():
+    """Richer structured data on the home page and on every guide (facts already on the page only)."""
+    from PIL import Image
+    t = rd("index.html"); pat = r'(<script type="application/ld\+json">)(.*?)(</script>)'
+    m = re.search(pat, t, re.S); d = json.loads(m.group(2)); g = d["@graph"]
+    ids = {x.get("@id"): x for x in g if isinstance(x, dict)}
+    org = ids[URL + "/#org"]; cx = ids[URL + "/#complex"]
+    org["@type"] = ["Organization", "RealEstateAgent"]
+    org["description"] = "Serenia by House of Jets: 2 BHK, 3 BHK and Simplex residences in Kiwale, near Mukai Chowk, Pune."
+    org["brand"] = {"@type": "Brand", "name": "House of Jets"}
+    org["contactPoint"] = {"@type": "ContactPoint", "contactType": "sales", "areaServed": "IN", "availableLanguage": ["en", "hi", "mr"], "url": URL + "/#enquire"}
+    def img(name, f, caption):
+        w, h = Image.open(os.path.join(ROOT, "images", f)).size
+        return {"@type": "ImageObject", "@id": f"{URL}/#img-{name}", "url": f"{URL}/images/{f}", "contentUrl": f"{URL}/images/{f}", "width": w, "height": h, "caption": caption, "inLanguage": "en-IN"}
+    imgs = [img("aerial", "aerial-view.webp", "Aerial view of 9-tower township, Serenia by House of Jets, Kiwale"),
+            img("podium", "podium-garden.webp", "Podium garden with seating and pathways, Serenia by House of Jets, Kiwale"),
+            img("towers", "tower-garden-view.webp", "Towers rising above the landscaped garden, Serenia by House of Jets, Kiwale")]
+    primary = {"@type": "ImageObject", "@id": URL + "/#primaryimage", "url": URL + "/images/og-image.jpg", "contentUrl": URL + "/images/og-image.jpg", "width": 1200, "height": 630, "caption": "Serenia by House of Jets, Kiwale, Pune", "inLanguage": "en-IN"}
+    cx["image"] = [{"@id": primary["@id"]}] + [{"@id": i["@id"]} for i in imgs]
+    cx["containedInPlace"] = {"@type": "Place", "name": "Kiwale, near Mukai Chowk, Pune", "hasMap": "https://www.google.com/maps/search/?api=1&query=Serenia+House+of+Jets+Kiwale+Pune",
+                              "address": {"@type": "PostalAddress", "addressLocality": "Kiwale, Pune", "addressRegion": "Maharashtra", "addressCountry": "IN"}}
+    title = re.search(r"<title>(.*?)</title>", t, re.S).group(1); desc = re.search(r'name="description" content="([^"]*)"', t).group(1)
+    page = {"@type": "WebPage", "@id": URL + "/#webpage", "url": URL + "/", "name": html.unescape(title), "description": html.unescape(desc), "inLanguage": "en-IN",
+            "isPartOf": {"@id": URL + "/#website"}, "about": {"@id": URL + "/#complex"}, "primaryImageOfPage": {"@id": primary["@id"]}, "breadcrumb": {"@id": URL + "/#breadcrumb"}}
+    crumb = {"@type": "BreadcrumbList", "@id": URL + "/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Serenia by House of Jets, Kiwale", "item": URL + "/"}]}
+    nav = {"@type": "ItemList", "@id": URL + "/#projectpages", "name": "Serenia Kiwale project pages", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": P[x]["h"][:1].upper() + P[x]["h"][1:], "url": f"{URL}/blog/{CAT}/{x}/"} for i, x in enumerate(ORDER)]}
+    have = {x.get("@id") for x in g}
+    for node in [page, primary] + imgs + [crumb, nav]:
+        if node["@id"] not in have: g.append(node)
+    t = t[:m.start()] + m.group(1) + json.dumps(d, ensure_ascii=False, indent=1) + m.group(3) + t[m.end():]
+    wr("index.html", t)
+    # every guide / project page: tie the BlogPosting to the project
+    for f in glob.glob(os.path.join(ROOT, "blog/**/index.html"), recursive=True):
+        rel = os.path.relpath(f, ROOT); tt = rd(rel); mm = re.search(pat, tt, re.S)
+        if not mm: continue
+        dd = json.loads(mm.group(2)); ch = False
+        for x in dd.get("@graph", []):
+            if x.get("@type") == "BlogPosting" and "about" not in x:
+                x["about"] = {"@id": URL + "/#complex"}; x["isPartOf"] = {"@id": URL + "/#website"}; ch = True
+        if ch: wr(rel, tt[:mm.start()] + mm.group(1) + json.dumps(dd, ensure_ascii=False, indent=1) + mm.group(3) + tt[mm.end():])
+
+
 def main():
     # 1) project pages
     for s in ORDER: build_page(s)
@@ -354,6 +397,7 @@ def main():
     t, path = list_page()
     wr(f"blog/{CAT}/index.html", t)
     sitewide()
+    enrich_schema()
     print("project pages built:", ORDER)
 
 

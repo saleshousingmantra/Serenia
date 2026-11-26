@@ -36,7 +36,10 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": [
+    "Organization",
+    "RealEstateAgent"
+   ],
    "@id": "https://sereniakiwale.com/#org",
    "name": "Serenia by House of Jets",
    "url": "https://sereniakiwale.com/",
@@ -47,7 +50,23 @@
     "addressRegion": "Maharashtra",
     "addressCountry": "IN"
    },
-   "areaServed": "Pune, Maharashtra, India"
+   "areaServed": "Pune, Maharashtra, India",
+   "description": "Serenia by House of Jets: 2 BHK, 3 BHK and Simplex residences in Kiwale, near Mukai Chowk, Pune.",
+   "brand": {
+    "@type": "Brand",
+    "name": "House of Jets"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "areaServed": "IN",
+    "availableLanguage": [
+     "en",
+     "hi",
+     "mr"
+    ],
+    "url": "https://sereniakiwale.com/#enquire"
+   }
   },
   {
    "@type": "WebSite",
@@ -64,7 +83,20 @@
    "@id": "https://sereniakiwale.com/#complex",
    "name": "Serenia by House of Jets, C Tower",
    "url": "https://sereniakiwale.com/",
-   "image": "https://sereniakiwale.com/images/og-image.jpg",
+   "image": [
+    {
+     "@id": "https://sereniakiwale.com/#primaryimage"
+    },
+    {
+     "@id": "https://sereniakiwale.com/#img-aerial"
+    },
+    {
+     "@id": "https://sereniakiwale.com/#img-podium"
+    },
+    {
+     "@id": "https://sereniakiwale.com/#img-towers"
+    }
+   ],
    "description": "Luxury 2 BHK, 3 BHK and Simplex residences in the tallest tower in Kiwale, Pune.",
    "numberOfAccommodationUnits": 1800,
    "address": {
@@ -171,7 +203,18 @@
     "name": "MahaRERA registration number",
     "value": "PM1260002602794"
    },
-   "inLanguage": "en-IN"
+   "inLanguage": "en-IN",
+   "containedInPlace": {
+    "@type": "Place",
+    "name": "Kiwale, near Mukai Chowk, Pune",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Serenia+House+of+Jets+Kiwale+Pune",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Kiwale, Pune",
+     "addressRegion": "Maharashtra",
+     "addressCountry": "IN"
+    }
+   }
   },
   {
    "@type": "Apartment",
@@ -307,6 +350,115 @@
       "@type": "Answer",
       "text": "Call or WhatsApp us, or fill in the enquiry form and Rishabh will arrange your visit."
      }
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://sereniakiwale.com/#webpage",
+   "url": "https://sereniakiwale.com/",
+   "name": "Serenia Kiwale | 2, 3 BHK & Simplex Flats in Pune",
+   "description": "Serenia by House of Jets, Kiwale: 2, 3 BHK & Simplex 4/6 BHK flats from ₹95 L. C Tower EOI open near Mukai Chowk, Pune. MahaRERA PM1260002602794.",
+   "inLanguage": "en-IN",
+   "isPartOf": {
+    "@id": "https://sereniakiwale.com/#website"
+   },
+   "about": {
+    "@id": "https://sereniakiwale.com/#complex"
+   },
+   "primaryImageOfPage": {
+    "@id": "https://sereniakiwale.com/#primaryimage"
+   },
+   "breadcrumb": {
+    "@id": "https://sereniakiwale.com/#breadcrumb"
+   }
+  },
+  {
+   "@type": "ImageObject",
+   "@id": "https://sereniakiwale.com/#primaryimage",
+   "url": "https://sereniakiwale.com/images/og-image.jpg",
+   "contentUrl": "https://sereniakiwale.com/images/og-image.jpg",
+   "width": 1200,
+   "height": 630,
+   "caption": "Serenia by House of Jets, Kiwale, Pune",
+   "inLanguage": "en-IN"
+  },
+  {
+   "@type": "ImageObject",
+   "@id": "https://sereniakiwale.com/#img-aerial",
+   "url": "https://sereniakiwale.com/images/aerial-view.webp",
+   "contentUrl": "https://sereniakiwale.com/images/aerial-view.webp",
+   "width": 1600,
+   "height": 873,
+   "caption": "Aerial view of 9-tower township, Serenia by House of Jets, Kiwale",
+   "inLanguage": "en-IN"
+  },
+  {
+   "@type": "ImageObject",
+   "@id": "https://sereniakiwale.com/#img-podium",
+   "url": "https://sereniakiwale.com/images/podium-garden.webp",
+   "contentUrl": "https://sereniakiwale.com/images/podium-garden.webp",
+   "width": 1600,
+   "height": 1510,
+   "caption": "Podium garden with seating and pathways, Serenia by House of Jets, Kiwale",
+   "inLanguage": "en-IN"
+  },
+  {
+   "@type": "ImageObject",
+   "@id": "https://sereniakiwale.com/#img-towers",
+   "url": "https://sereniakiwale.com/images/tower-garden-view.webp",
+   "contentUrl": "https://sereniakiwale.com/images/tower-garden-view.webp",
+   "width": 1198,
+   "height": 1280,
+   "caption": "Towers rising above the landscaped garden, Serenia by House of Jets, Kiwale",
+   "inLanguage": "en-IN"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://sereniakiwale.com/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Serenia by House of Jets, Kiwale",
+     "item": "https://sereniakiwale.com/"
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://sereniakiwale.com/#projectpages",
+   "name": "Serenia Kiwale project pages",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Serenia Kiwale project overview: House of Jets township in Pune",
+     "url": "https://sereniakiwale.com/blog/serenia/serenia-kiwale-overview/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Serenia Kiwale price list: 2 BHK and 3 BHK all-inclusive packages",
+     "url": "https://sereniakiwale.com/blog/serenia/serenia-price-list/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Serenia Kiwale floor plans and carpet areas: 2 BHK and 3 BHK",
+     "url": "https://sereniakiwale.com/blog/serenia/serenia-floor-plans/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Serenia Kiwale RERA number and developer details",
+     "url": "https://sereniakiwale.com/blog/serenia/serenia-rera-details/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "name": "Serenia Kiwale amenities: pool, clubhouse, podium garden and more",
+     "url": "https://sereniakiwale.com/blog/serenia/serenia-amenities/"
     }
    ]
   }
