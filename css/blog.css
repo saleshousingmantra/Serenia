@@ -249,3 +249,6 @@
 .smap a{display:block;padding:10px 0;color:var(--ink);font-size:16px}
 .smap a:hover{color:var(--cu-d)}
 @media(max-width:960px){.smap{grid-template-columns:1fr}}
+
+.bhero h1 .h1-brand{display:block;font-family:inherit;font-size:.4em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cu-l);margin-bottom:8px}
+figure.plan{margin:18px 0}figure.plan img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line,#e6e0d8)}figure.plan figcaption{font-size:14px;color:var(--mut,#6b6b6b);margin-top:6px;text-align:center}
