@@ -74,7 +74,7 @@
 .gcard:hover img{transform:scale(1.06)}
 .gcard .tx{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
 .gcard small{color:var(--cu-d);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px}
-.gcard h3{font-size:20px;margin:6px 0 8px;line-height:1.25;color:var(--ink)}
+.gcard h3,.gcard h2.h3{font-size:20px;margin:6px 0 8px;line-height:1.25;color:var(--ink)}
 .gcard p{color:var(--mut);font-size:14px;line-height:1.55;margin-bottom:12px}
 .post-body .gcard p{font-size:14px;line-height:1.55;margin-bottom:12px;color:var(--mut)}
 .gcard .ft span{white-space:nowrap}
@@ -144,7 +144,7 @@
  .gcards .gcard .im{flex:0 0 36%;aspect-ratio:auto;min-height:130px}
  .gcards .gcard .tx{padding:14px 14px 12px;min-width:0}
  .gcard small{font-size:10.5px}
- .gcard h3{font-size:16.5px;margin:4px 0 6px}
+ .gcard h3,.gcard h2.h3{font-size:16.5px;margin:4px 0 6px}
  .gcard p,.post-body .gcard p{font-size:13px;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
  .gcard .ft{font-size:12px}
  .pn a{padding:14px 16px}.pn b{font-size:16px}
@@ -184,7 +184,7 @@
  .gcards.two .gcard{flex-direction:column}
  .gcards.two .gcard .im{flex:none;aspect-ratio:16/9;min-height:0}
  .gcards.two .gcard .tx{padding:12px 14px}
- .gcards.two .gcard h3{font-size:16px}
+ .gcards.two .gcard h3,.two .gcard h2.h3{font-size:16px}
  #toTop{width:40px;height:40px;right:12px}
 }
 
@@ -208,12 +208,12 @@
 .post-body p,.post-body li{font-weight:300;font-size:18.5px}
 .post-body p strong,.post-body li strong{font-weight:500}
 .post-body h2{font-weight:500}
-.gcard h3,.feature h2,.pn b,.sidecta h3,.toc summary,.takeaways h2,.helpful b,.band h2,.soon h3{font-weight:600}
+.gcard h3,.gcard h2.h3,.feature h2,.pn b,.sidecta h3,.toc summary,.takeaways h2,.helpful b,.band h2,.soon h3{font-weight:600}
 .gcard small,.tag-pill,.pn small{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:13px}
 @media(min-width:701px){
  .bhero h1{font-size:clamp(36px,5.4vw,64px)}
  .post-body h2{font-size:36px}
- .gcard h3{font-size:25px}
+ .gcard h3,.gcard h2.h3{font-size:25px}
  .feature h2{font-size:clamp(30px,3.4vw,42px)}
  .sidecta h3{font-size:27px}
  .takeaways h2{font-size:26px}
@@ -226,15 +226,15 @@
  .post-body p,.post-body li{font-size:16.5px}
  .post-body h2{font-size:26px}
  .post-body .relh{font-size:25px}
- .gcard h3{font-size:19px}
- .gcards .gcard h3{font-size:18px}
+ .gcard h3,.gcard h2.h3{font-size:19px}
+ .gcards .gcard h3,.gcards .gcard h2.h3{font-size:18px}
  .feature h2{font-size:25px}
  .sidecta h3{font-size:22px}
  .takeaways h2{font-size:21px}
  .pn b{font-size:17px}
  .band h2{font-size:25px}
 }
-.bhero h1,.post-body h2,.gcard h3,.feature h2,.pn b,.sidecta h3,.band h2{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.bhero h1,.post-body h2,.gcard h3,.gcard h2.h3,.feature h2,.pn b,.sidecta h3,.band h2{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
 .post-body td a{color:var(--cu-d);font-weight:600;text-decoration:underline;text-decoration-color:rgba(163,83,47,.35);text-underline-offset:3px;font-size:14.5px}
 .post-body td a:hover{text-decoration-color:var(--cu-d)}
 .post-body table.compare td:nth-child(3){min-width:200px}
