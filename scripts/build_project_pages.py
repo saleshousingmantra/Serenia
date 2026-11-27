@@ -16,7 +16,7 @@ import re, os, glob, html, json
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 URL = "https://sereniakiwale.com"
 DATE = "2026-11-26"
-VER = "20261127a"
+VER = "20261127b"
 RERA = "PM1260002602794"
 CAT = "serenia"
 TPL = os.path.join(ROOT, "blog/buying-guides/2-bhk-vs-3-bhk/index.html")
