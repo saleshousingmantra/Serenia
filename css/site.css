@@ -137,7 +137,7 @@ details p{color:var(--mut);margin-top:10px;font-size:15px}
 /* footer */
 footer{background:#062428;color:#a9c4c0;padding:54px 0 96px;font-size:14px}
 footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:30px}
-footer h4{color:#fff;margin-bottom:10px;font-size:15px}
+footer h3.fh,footer h4{color:#fff;margin-bottom:10px;font-size:15px}
 footer a:hover{color:#fff}
 footer .disc{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12.5px;line-height:1.7}
 .todo{background:#fff4d6;color:#7a5a12;border:1px dashed #d9b04a;border-radius:6px;padding:1px 8px;font-size:12px}
@@ -489,7 +489,7 @@ button.btn,.btn-line{-webkit-appearance:none;appearance:none}
 /* Never let a long word or a large phone text size widen the page */
 html,body{overflow-x:clip;max-width:100%}
 footer .cols{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr)}
-footer .cols>div,footer p,footer h4{min-width:0;overflow-wrap:anywhere}
+footer .cols>div,footer p,footer h3.fh,footer h4{min-width:0;overflow-wrap:anywhere}
 .split>*,.cta .wrap>*,.hero .wrap>*,.post-layout>*{min-width:0}
 @media(max-width:960px){footer .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:700px){.stats{flex-wrap:wrap}}

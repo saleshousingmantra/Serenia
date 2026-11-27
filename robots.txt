@@ -1,7 +1,4 @@
-# Serenia by House of Jets, Kiwale, Pune
 User-agent: *
 Allow: /
-Disallow: /404.html
-Disallow: /thank-you/
 
 Sitemap: https://sereniakiwale.com/sitemap.xml
