@@ -252,3 +252,9 @@
 
 .bhero h1 .h1-brand{display:block;font-family:inherit;font-size:.4em;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cu-l);margin-bottom:8px}
 figure.plan{margin:18px 0}figure.plan img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line,#e6e0d8)}figure.plan figcaption{font-size:14px;color:var(--mut,#6b6b6b);margin-top:6px;text-align:center}
+/*retrofit-a11y*/
+button[aria-controls$="interest-list"] .v,.v{color:#56655f!important}
+#enquire .card .consent,.card .consent{color:#56655f!important}
+.mbar button[data-intent="whatsapp"],button[style*="#1fa855"]{background:#157a3c!important;color:#fff!important}
+footer a{display:inline-block;padding:4px 0;min-height:24px}
+article a,.prose a{color:#8a5a00}

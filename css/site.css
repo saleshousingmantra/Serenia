@@ -523,3 +523,9 @@ footer .cols>div,footer p,footer h3.fh,footer h4{min-width:0;overflow-wrap:anywh
 .gl-quick{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px 0 0}
 .gl-quick a{font-size:13px;font-weight:600;color:var(--deep,#0B3B3F);background:#fff;border:1px solid rgba(11,59,63,.18);border-radius:99px;padding:7px 14px;text-decoration:none;transition:background .2s,border-color .2s}
 .gl-quick a:hover{background:#fff4ea;border-color:var(--cu,#C9714A)}
+/*retrofit-a11y*/
+button[aria-controls$="interest-list"] .v,.v{color:#56655f!important}
+#enquire .card .consent,.card .consent{color:#56655f!important}
+.mbar button[data-intent="whatsapp"],button[style*="#1fa855"]{background:#157a3c!important;color:#fff!important}
+footer a{display:inline-block;padding:4px 0;min-height:24px}
+article a,.prose a{color:#8a5a00}

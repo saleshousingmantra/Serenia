@@ -18,3 +18,8 @@ Build: `npm run build` (output directory: `dist`).
 MahaRERA No. PM1260002602794 is shown in the footer, About section, FAQ and page description.
 
 Leads are saved to the shared Supabase `enquiries` table, tagged with `project = "Serenia by House of Jets"`.
+
+## 2026-11-27 upgrade
+`scripts/retrofit.py` applies the Ceratec-era upgrades to the built site (keywords/geo meta, About, Privacy and Cookie pages, footer links and consent line, noscript form fallback, accessibility and contrast fixes, honest sitemap `lastmod` in `scripts/lastmod.json`, `llms.txt`, caching and security headers). **Run `python3 scripts/retrofit.py .` after `node scripts/build.mjs`** so regenerated pages keep the fixes. Then run `python3 scripts/audit_seo.py . https://sereniakiwale.com` and `python3 scripts/audit_deep.py .` (both must pass).
+
+TODO for the client: confirm the map pin (latitude/longitude) and set `lat`/`lon` in `scripts/retrofit.json` to add `geo.position`, `ICBM` and GeoCoordinates; have the policy pages reviewed by a lawyer; add the operator's registered name and contact details.
