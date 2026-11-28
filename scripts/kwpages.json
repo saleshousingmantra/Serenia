@@ -1,0 +1,91 @@
+{
+ "name": "Serenia",
+ "short": "Serenia Kiwale",
+ "developer": "House of Jets",
+ "loc": "Kiwale",
+ "loc_slug": "kiwale",
+ "city": "Pune",
+ "city_slug": "pune",
+ "loc_full": "Kiwale, near Mukai Chowk, Pune",
+ "slug_prefix": "serenia",
+ "contact_id": "enquire",
+ "price_basis": "as an all-inclusive package per the current price sheet (indicative)",
+ "rera_text": "The project is registered under MahaRERA PM1260002602794; verify it on the MahaRERA website before paying any token.",
+ "locality_guide": "../blog/locality/kiwale-locality-overview/",
+ "about_loc": "Kiwale is on the western side of Pune, near Mukai Chowk, and Serenia by House of Jets is a 10-acre township there.",
+ "map_query": "Serenia House of Jets Kiwale Pune",
+ "landmarks": [
+  [
+   "Mukai Chowk",
+   "Mukai Chowk Kiwale Pune"
+  ],
+  [
+   "Ravet",
+   "Ravet Kiwale Pune"
+  ],
+  [
+   "Hinjewadi IT Park",
+   "Hinjewadi IT Park Kiwale Pune"
+  ],
+  [
+   "Dehu Road Railway Station",
+   "Dehu Road Railway Station Kiwale Pune"
+  ],
+  [
+   "Akurdi Railway Station",
+   "Akurdi Railway Station Kiwale Pune"
+  ]
+ ],
+ "budgets": [
+  [
+   10000000,
+   "₹1 Crore",
+   "1-crore"
+  ],
+  [
+   14000000,
+   "₹1.4 Crore",
+   "1-4-crore"
+  ]
+ ],
+ "types": [
+  {
+   "label": "2 BHK",
+   "slug": "2-bhk",
+   "beds": 2,
+   "area": "674–678",
+   "a_lo": 674,
+   "a_hi": 678,
+   "p_lo": 9500000,
+   "p_hi": 10000000
+  },
+  {
+   "label": "3 BHK",
+   "slug": "3-bhk",
+   "beds": 3,
+   "area": "956–962",
+   "a_lo": 956,
+   "a_hi": 962,
+   "p_lo": 13500000,
+   "p_hi": 14000000
+  }
+ ],
+ "locality_links": [
+  [
+   "Kiwale locality overview",
+   "../blog/locality/kiwale-locality-overview/"
+  ],
+  [
+   "Schools and colleges near Kiwale",
+   "../blog/locality/schools-and-colleges-near-kiwale/"
+  ],
+  [
+   "Hospitals near Kiwale",
+   "../blog/locality/hospitals-near-kiwale/"
+  ],
+  [
+   "Shopping and malls near Kiwale",
+   "../blog/locality/shopping-and-malls-near-kiwale/"
+  ]
+ ]
+}

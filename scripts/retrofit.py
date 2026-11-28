@@ -98,11 +98,22 @@ def versions(h):
 
 def footer_links(h, url):
     m = re.search(r"<footer.*?</footer>", h, re.S)
-    if not m or "privacy-policy" in m.group(0):
+    if not m:
+        return h
+    need = [x[1] for x in CFG.get("extra_footer", []) if x[1] not in m.group(0)]
+    if "privacy-policy" in m.group(0) and not need:
+        return h
+    if "privacy-policy" in m.group(0):      # only the extra links are missing
+        s2 = re.search(r'<a href="[^"]*cookie-policy/">[^<]*</a>', m.group(0))
+        if s2:
+            pf = prefix(url)
+            sep = "<br>" if m.group(0)[s2.end():s2.end() + 4] == "<br>" else ""
+            ins = "".join(f'{sep}<a href="{pf}{p}">{n}</a>' for n, p in [tuple(x) for x in CFG.get("extra_footer", []) if x[1] in need])
+            return h.replace(m.group(0), m.group(0)[:s2.end()] + ins + m.group(0)[s2.end():], 1)
         return h
     pf = prefix(url)
     f = m.group(0)
-    links = [("About", "about/"), ("Privacy", "privacy-policy/"), ("Cookies", "cookie-policy/")]
+    links = [("About", "about/"), ("Privacy", "privacy-policy/"), ("Cookies", "cookie-policy/")] + [tuple(x) for x in CFG.get("extra_footer", [])]
     s = re.search(r'<a href="[^"]*sitemap/">[^<]*</a>', f)
     if s:
         sep = "<br>" if f[s.end():s.end() + 4] == "<br>" else ""
