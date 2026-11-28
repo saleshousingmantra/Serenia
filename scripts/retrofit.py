@@ -441,6 +441,8 @@ def legal_pages(tpl):
              ("privacy-policy", f"Privacy Policy | {name}", f"How this website collects, uses and protects the details you share when you enquire about {name}.", f"Privacy Policy: {name}", "How this website collects, uses and protects the details you share when you enquire.", privacy),
              ("cookie-policy", f"Cookie Policy | {name}", "What cookies and similar storage this website uses, why, and how to control them.", f"Cookie Policy: {name}", "What cookies and similar storage this website uses, why, and how to control them.", cookie)]
     for slug, title, desc, h1, dek, body in specs:
+        if os.path.exists(os.path.join(ROOT, slug, "index.html")) and not os.environ.get("RETROFIT_FORCE"):
+            continue      # keep existing policy pages stable (dates and lastmod); RETROFIT_FORCE=1 rewrites them
         if len(title) > 60:
             title = title[:57].rstrip() + "..."
         write(os.path.join(ROOT, slug, "index.html"), make_page(slug, title, desc[:160], h1, dek, body, tpl))
