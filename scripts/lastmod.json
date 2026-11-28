@@ -25,7 +25,7 @@
 },
 "/blog/": {
 "date": "2026-11-28",
-"hash": "78f8a7e2bed207f6e4160e8762f0c86c"
+"hash": "f91f417c71f553c0a145522f1627bcc2"
 },
 "/blog/buying-guides/": {
 "date": "2026-11-28",
@@ -45,15 +45,19 @@
 },
 "/blog/locality/": {
 "date": "2026-11-28",
-"hash": "666c6fb922c0ced80385ddddfa99acca"
+"hash": "a5b29bae0544fcf8cd339e37cef86cf4"
 },
 "/blog/locality/hospitals-near-kiwale/": {
 "date": "2026-11-28",
 "hash": "78e72415444c57a3582a9e4b295e860e"
 },
+"/blog/locality/it-parks-and-jobs-near-kiwale/": {
+"date": "2026-11-28",
+"hash": "b0f4f1e5ec02a291822390e0e43b3262"
+},
 "/blog/locality/kiwale-locality-overview/": {
 "date": "2026-11-28",
-"hash": "3937cb591fd541b4a633ca74a083dce9"
+"hash": "9c53d8614cc48a6788a57968efa7b103"
 },
 "/blog/locality/schools-and-colleges-near-kiwale/": {
 "date": "2026-11-28",
@@ -61,7 +65,7 @@
 },
 "/blog/locality/shopping-and-malls-near-kiwale/": {
 "date": "2026-11-28",
-"hash": "3e427fc4792ea613b30ade4b302df434"
+"hash": "7eeb9f2db042f677e3e8a0cac7d89a57"
 },
 "/blog/serenia/": {
 "date": "2026-11-28",
@@ -149,7 +153,7 @@
 },
 "/sitemap/": {
 "date": "2026-11-28",
-"hash": "55d32d113aab217c2d4da35ac469fc74"
+"hash": "1dab49257f56006857d2b2605ab904f3"
 },
 "/total-flat-cost-calculator/": {
 "date": "2026-11-28",
